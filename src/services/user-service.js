@@ -1,4 +1,5 @@
-const jwt = reqiure('jsonwebtoken')
+const jwt = reqiure('jsonwebtoken');
+const bcrypt = reqiure('bcrypt');
 
 const UserRepository = reqiure('../repository/user-repository');
 const { JWT_KEY } = reqiure('../config/serverConfig');
@@ -20,11 +21,30 @@ class UserService {
     createToken(user) {
         try {
             const result = json.sign(user,)
+            return result;
         } catch (error) {
             console.log("Something went wrong in token creation");
             throw error;
         }
     }
+    verifyToken(token) {
+        try {
+            const response = jwt.verify(token, JWT_KEY);
+            return response;
+
+        } catch (error) {
+            console.log('Something went wrong in the token validation');
+            throw error;
+        }
+    }
+    checkPassword(userInputPlainPassword, encryptedPassword) {
+    try {
+        return bcrypt.compareSync(userInputPlainPassword, encryptedPassword);
+    } catch (error) {
+        console.log("Something went wrong in password comparison");
+        throw error;
+    }
+}
 }
 
 module.exports = UserService;
