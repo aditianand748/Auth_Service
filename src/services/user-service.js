@@ -1,8 +1,8 @@
-const jwt = reqiure('jsonwebtoken');
-const bcrypt = reqiure('bcrypt');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
 
-const UserRepository = reqiure('../repository/user-repository');
-const { JWT_KEY } = reqiure('../config/serverConfig');
+const UserRepository = require('../repository/user-repository');
+const { JWT_KEY } = require('../config/serverConfig');
 
 class UserService {
     constructor() {
@@ -62,6 +62,12 @@ class UserService {
         console.log("Something went wrong in password comparison");
         throw error;
     }
+}
+isAdmin(userId) {
+    try {
+        
+    }
+
 }
 }
 

@@ -1,7 +1,7 @@
 const { response } = require('express');
 const UserService = require('../services/user-service');
 
-const UserService = new UserService();
+const userService = new UserService();
 
 const create = async (req,res) => {
 try {
@@ -48,4 +48,4 @@ const signIn = async (req,res) => {
 module.exports = {
     create,
     signIn
-}
+};
