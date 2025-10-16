@@ -22,13 +22,6 @@ const prepareAndStartServer = () => {
         }
 
 
-        //const service = new UserService();
-        //const newToken = service.createToken({email: 'aditi@admin.com', id: 1});
-       // console.log("new token is", newToken);
-       // const token = ' eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkaXRpQGFkbWluLmNvbSIsImlkIjoxLCJpYXQiOjE3NjA1ODE1MzgsImV4cCI6MTc2MDU4NTEzOH0._5kQFHaYhesv7_FbpLwPZuA49HATTIwgLwmPNGt9-vk';
-        //const response = service.verifyToken(token);
-       // console.log(response);
-
     });
 
 }
